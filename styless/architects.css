@@ -32,12 +32,19 @@ main >section{
 .text-gray{
     color: #424242;
 }
+.text-primary{
+    color: #FF900E;
+}
 .text-light-gray{
     color: #424242;
     
 }
 .bg-color{
     background-color: rgba(255, 144, 14, 0.1);
+}
+.section-title{
+    font-size: 2.8rem;
+    font-weight: 700;
 }
 /* Header styles */
 
@@ -58,7 +65,7 @@ main >section{
 .nav-link{
     text-decoration: none;
     font-weight: 500;
-    color: ;
+    color: none;
 }
 .navbar, .banner{
     max-width: 1440px;
@@ -94,19 +101,86 @@ main >section{
     max-width: 530px;
 }
 
-.feature-title{
-    font-size: 2.8rem;
-    font-weight: 700;
-}
+
 #quick-list{
     font-weight: 500;
 }
+/* some fact styles */
+.facts-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.fact{
+    border: 1px solid #FF900E;
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.fact-numbr{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.fact-name{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.fact-description{
+    max-width: 540px;
+}
+/* sponsors */
+.sponsor-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.sponsor-companies{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.sponsor-companies img{
+    filter: grayscale(100%);
+}
+
 
 /* responsive media query */
 @media screen and (max-width: 576px) {
-    .navbar, .nav-links{
+    .navbar, .nav-links, 
+    .teams{
         flex-direction: column;
 
     }
+    .team-img-container, .sponsor-companies{
+        grid-template-columns: repeat(1, 1fr);
+    }
+.facts-container, .sponsor-companies{
+    justify-items: center;
+    gap: 24px;
+}
+    .our-features{
+        margin-left: 20px;
+    }
+    }
+    @media screen and (min-width: 576px) and (max-width: 992px) 
+    {
+        .teams{
+            flex-direction: column;
+        }
+        .our-features{
+            margin: 50px auto ;
+        }
+        .sponsor-companies, .facts-container{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            justify-items: center;
+        }
+        
     }
 
